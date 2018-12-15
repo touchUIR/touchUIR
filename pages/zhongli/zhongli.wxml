@@ -1,0 +1,7 @@
+<view>重力操作图片移动 </view>
+
+
+<image bindtap="changeName" id='img' style="-webkit-transition: transform .2s linear;width: 200px; height: 200px; left:0px;-webkit-transform:translate3d({{transformLeft}}px,0px,0)"  src="{{src}}"></image>
+
+
+<image bindtap="changeName" id='img' style="width: 200px; height: 200px; "  src="http://lc-0b2nocdk.cn-n1.lcfile.com/e28deb1119ee175b4f37.jpg"></image>

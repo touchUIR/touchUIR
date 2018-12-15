@@ -1,0 +1,64 @@
+
+<view class="bigview" style='background-image:url({{userInfo.avatarUrl}})'>
+  
+</view>
+
+
+    
+    <view class="info" >
+    <button wx:if="{{!user.avatarUrl}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+      <image  wx:if="{{user.avatarUrl}}" bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+     <view class="de"  wx:if="{{user.avatarUrl}}"> <text  wx:if="{{user.avatarUrl}}" class="userinfo-nickname">{{userInfo.nickName}}</text><view class="gend"><van-tag  wx:if="{{user.avatarUrl}}" class="demo-margin-right" round type="primary">等级：{{userInfo.gender}}</van-tag></view></view></view>
+
+
+
+<!--
+<view class="cv">
+  <view class="containe">
+    <view class="userinfo" style=' background-image:{{user.avatarUrl}}'>-->
+      <!--<button class="butt"  wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" > 点击登陆 </button>
+    
+    <block wx:else>
+      <image class="userinfo-avatar" bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>  
+    </block>-->
+      <!--<image class="userinfo-avatar" bindtap="bindViewTap" class="userinfo-avatar" src="{{user.avatarUrl}}" background-size="cover"></image>
+
+    </view>
+    <text class="userinfo-nickname">{{user.nickName}}</text>
+  </view>
+  <view style="margin-bottom;padding:5rpx;border-bottom:10pX solid #9C978B;"></view>
+</view>-->
+
+
+
+<demo-block title="个人管理">
+  <van-cell-group>
+    <van-cell title="维修预约" icon="records" border="{{ true }}" bindtap="navigateToMyyuyue" />
+     <van-cell title="我的反馈" icon="share" border="{{ true }}"  bindtap="navigateToFankuiAdvice"/>
+      <van-cell title="网络报修" icon="pending-orders" border="{{ true }}"  bindtap="navigateToNet"/>
+      <van-cell title="我的发布" icon="sign" border="{{ true }}"  bindtap="navigateToActivity"/>
+      <van-cell title="我的表白" icon="like-o" border="{{ true }}"  bindtap="navigateTolove"/>
+  </van-cell-group></demo-block><demo-block title="疑难解答">
+   <van-cell-group>
+    <van-cell title="关于我们" icon="contact" border="{{ true }}"  bindtap="navigateTo" />
+     <van-cell title="疑难解答" icon="question" border="{{ true }}"  bindtap="navigateour" />
+      <van-cell title="Bug反馈" icon="exchange-record" border="{{ true }}" bindtap="navigateToAdvice" />
+  </van-cell-group>
+</demo-block>
+<demo-block title="管理平台">
+<van-cell-group>
+    
+  
+      
+  </van-cell-group>
+  <van-cell-group>
+    <van-cell title="信息管理" icon="edit" border="{{ true }}"  bindtap="navigateToFail" />
+  
+      
+  </van-cell-group></demo-block>
+  <!--<view >
+<van-tabbar active="{{ active }}"   bind:change="onChange">
+  <van-tabbar-item icon="wap-home">主页</van-tabbar-item>
+  <van-tabbar-item icon="records" wx:if='{{!netzan}}'>兴趣部落</van-tabbar-item>
+  <van-tabbar-item icon="contact" >个人管理</van-tabbar-item>
+</van-tabbar></view>-->

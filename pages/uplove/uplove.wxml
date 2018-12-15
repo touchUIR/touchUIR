@@ -1,0 +1,128 @@
+<!--pages/uplove/uplove.wxml-->
+
+<van-toast id="van-toast" />
+<van-dialog id="van-dialog" />
+<demo-block title="表白">
+<van-cell-group>
+  <van-field
+    value="{{ username }}"
+    required
+    clearable
+    label="心里话"
+    placeholder="说出你的心里话吧"
+    bind:change="inputTelphone"
+  />
+
+ <van-field
+    value="{{ act_biaoqian }}"
+    label="主题"
+    clearable
+    placeholder="暗恋？复合?今天，你的主题是什么"
+    required
+    border="{{ false }}"
+    bind:change="inputBiaoqian"
+  />
+
+</van-cell-group>
+</demo-block>
+
+<view class=".v-fb">
+<form bindsubmit="formSubmit" bindreset="formReset">
+<demo-block title="配对开关">
+<van-switch-cell
+  title="配对"
+  checked="{{ checked }}"
+  bind:change="onChangep"
+  
+/>
+<van-cell
+    title="什么是配对？"
+   
+    label="还在为喜欢的ta是否喜欢自己而苦恼吗？试试配对吧！当你选择了配对，可以填写自己的姓名或其他信息用来匹配，或者填写只有你们俩知道的答案，若ta看到了表白墙的自己，可以选择是否配对，选择的话就可以根据提示输入答案，如果ta也喜欢你，那么ta留下的答案就是你的答案，那么恭喜你，爱情就在你身边"
+    border="{{ false }}"
+  />
+
+
+</demo-block>
+
+<demo-block title="配对信息" wx:if="{{checked}}" >
+  <van-cell-group>
+    <van-field
+      value="{{ ques }}"
+      label="问题"
+      type="textarea"
+      placeholder="写下你的问题，也许ta知道答案"
+      rows="1"
+      autosize
+      border="{{ false }}"
+       bind:change="inputDetail"
+    />
+     <van-field
+      value="{{ ans }}"
+      label="答案"
+      type="textarea"
+      placeholder="说下只有你们俩知道的答案吧"
+      rows="1"
+      autosize
+      border="{{ false }}"
+       bind:change="inputDetail2"
+    />
+         <van-field
+      value="{{ liuyan }}"
+      label="留言"
+      type="textarea"
+      placeholder="如果配对成功，说点什么吧"
+      rows="2"
+      autosize
+      border="{{ false }}"
+       bind:change="inputDetail3"
+    />
+  </van-cell-group>
+</demo-block>
+
+
+
+
+
+
+</form>
+
+</view>
+<demo-block title="图片上传">
+<view class="weui-cells">
+          <view class="weui-cell">
+            <view class="weui-cell__bd">
+              <view class="weui-uploader">
+                <view class="weui-uploader__hd">
+                  <view class="weui-uploader__title" style='color:rgba(69,90,100,.6)'>点击可预览选好的图片</view>
+                  <view class="weui-uploader__info">{{imageList.length}}/{{count[countIndex]}}</view>
+                </view>
+                <view class="weui-uploader__bd">
+                  <view class="weui-uploader__files">
+                    <block wx:for="{{imageList}}" wx:for-item="image">
+                      <view class="weui-uploader__file">
+                        <image class="weui-uploader__img" src="{{image}}" data-src="{{image}}" bindtap="previewImage"></image>
+                      </view>
+                    </block>
+                  </view>
+                  <view class="weui-uploader__input-box">
+                    <view class="weui-uploader__input" bindtap="chooseImage"></view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+</demo-block>
+
+
+  <van-panel   use-footer-slot>
+    
+    <view slot="footer"  class="footer">
+      <!--<van-button size="small" custom-class="demo-margin-right1"  bindtap="back">取消</van-button>-->
+      <van-button size="small" type="danger" bindtap="updetail" >提交</van-button>
+  
+    </view>
+  </van-panel>
+
+

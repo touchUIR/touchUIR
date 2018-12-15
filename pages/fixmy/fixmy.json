@@ -1,0 +1,16 @@
+{
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#eeeeee",
+  "navigationBarTitleText": "问题排查",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "demo-block": "../../components/demo-block/index",
+    "van-tab": "../../dist/tab/index",
+    "van-tabs": "../../dist/tabs/index",
+    "van-tag": "../../dist/tag/index",
+"van-notice-bar": "../../dist/notice-bar/index",
+"van-button": "../../dist/button/index",
+  "van-dialog": "../../dist/dialog/index"
+  }
+  
+ }

@@ -1,0 +1,143 @@
+<van-toast id="van-toast" />
+<van-dialog id="van-dialog" />
+<demo-block title="发布详情">
+<van-cell-group>
+  <van-field
+    value="{{ username }}"
+    required
+    clearable
+    label="发布者"
+    placeholder="发布者称呼"
+    bind:change="inputTelphone"
+  />
+  <van-field
+    value="{{ password }}"
+    label="简介"
+    clearable
+    placeholder="写下发布简介，展示在首页哦"
+    required
+    border="{{ false }}"
+    bind:change="inputAdress"
+  />
+ <van-field
+    value="{{ way }}"
+    label="联系方式"
+    clearable
+    placeholder="写下联系方式（建议填写手机号）"
+    required
+    border="{{ false }}"
+    bind:change="inputWay"
+  />
+ <van-field
+    value="{{ act_biaoqian }}"
+    label="标签"
+    clearable
+    placeholder="活动标签，如：失物招领、讲座等，不建议超过4个字"
+    required
+    border="{{ false }}"
+    bind:change="inputBiaoqian"
+  />
+
+</van-cell-group>
+</demo-block>
+
+<view class=".v-fb">
+<form bindsubmit="formSubmit" bindreset="formReset">
+<demo-block title="有效">
+<view class="ddd">
+<view class="section2">  
+  <picker class="pick_con" mode="date" value="{{date}}" start="2018-10-01" end="2019-10-01" bindchange="bindDateChange">  
+    <view class="picker">  
+      {{act_dates}}  
+    </view>  
+  </picker>  
+</view>  
+
+<view class="section2">  
+  <picker class="pick_con" mode="time" value="{{time}}" start="08:00" end="24:00" bindchange="bindTimeChange">  
+    <view class="picker">  
+      {{act_times}}
+    </view>  
+  </picker>  
+</view>  
+</view>
+
+<view class='ddd'>
+<view class="section2">  
+  <picker class="pick_con" mode="date" value="{{date}}" start="2018-10-01" end="2019-10-01" bindchange="bindDateChange_ed">  
+    <view class="picker">  
+      {{act_dates_ed}}  
+    </view>  
+  </picker>  
+</view>  
+
+<view class="section2">  
+  <picker class="pick_con" mode="time" value="{{time}}" start="08:00" end="24:00" bindchange="bindTimeChange_ed">  
+    <view class="picker">  
+    {{act_times_ed}}
+    </view>  
+  </picker>  
+</view>  
+</view>
+</demo-block>
+<demo-block title="详情">
+  <van-cell-group>
+    <van-field
+      value="{{ message }}"
+      label="发布详情"
+      type="textarea"
+      placeholder="在这里写详情吧"
+      rows="1"
+      autosize
+      border="{{ false }}"
+       bind:change="inputDetail"
+    />
+  </van-cell-group>
+</demo-block>
+
+
+
+
+
+
+</form>
+
+</view>
+<demo-block title="图片上传">
+<view class="weui-cells">
+          <view class="weui-cell">
+            <view class="weui-cell__bd">
+              <view class="weui-uploader">
+                <view class="weui-uploader__hd">
+                  <view class="weui-uploader__title" style='color:rgba(69,90,100,.6)'>点击可预览选好的图片</view>
+                  <view class="weui-uploader__info">{{imageList.length}}/{{count[countIndex]}}</view>
+                </view>
+                <view class="weui-uploader__bd">
+                  <view class="weui-uploader__files">
+                    <block wx:for="{{imageList}}" wx:for-item="image">
+                      <view class="weui-uploader__file">
+                        <image class="weui-uploader__img" src="{{image}}" data-src="{{image}}" bindtap="previewImage"></image>
+                      </view>
+                    </block>
+                  </view>
+                  <view class="weui-uploader__input-box">
+                    <view class="weui-uploader__input" bindtap="chooseImage"></view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+</demo-block>
+
+
+  <van-panel   use-footer-slot>
+    
+    <view slot="footer"  class="footer">
+      <!--<van-button size="small" custom-class="demo-margin-right1"  bindtap="back">取消</van-button>-->
+      <van-button size="small" type="danger" bindtap="updetail" >提交</van-button>
+  
+    </view>
+  </van-panel>
+
+

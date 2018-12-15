@@ -1,0 +1,181 @@
+<!-- 横向滑动列表 -->
+<scroll-view scroll-x="true" class="ip_tab_comtainer">
+  <view class="ip_tab_comtainer_padd"></view>
+  <block wx:for="{{ips}}" wx:for-item="ip" wx:key="{{ip.id}}">
+    <view class="{{ip.isSelect?'ip_tab_item_s':'ip_tab_item_n'}}" bindtap="onIpItemClick" wx:key="{{ip.id}}" data-item="{{ip}}">
+      {{ip.title}}
+    </view>
+  </block>
+  <view class="ip_tab_comtainer_padd"></view>
+</scroll-view>
+<view class='content'>
+
+  <!--综合反馈-->
+  <view class="tui-content" wx:if="{{ips[0].isSelect}}">
+    <view class="tui-menu-list" wx:for="{{allques}}">
+      <view class="card" bindtap='to_Daily' data-id="{{index}}">
+        <view bindtap="onItemClick">
+          <view class="decon">
+            <view class="big_title">
+              <view class="main_title">
+                <view class="title">{{item.leixing}}</view>
+                 <view class="time">{{item.zhuangtai}}</view>
+                <view class="little_title">
+                  <view class="li_li_ti" >{{item.adress}}
+                  {{item.updatedAt[0]}}{{item.updatedAt[1]}}{{item.updatedAt[2]}}{{item.updatedAt[3]}}{{item.updatedAt[4]}}{{item.updatedAt[5]}}{{item.updatedAt[6]}}{{item.updatedAt[7]}}{{item.updatedAt[8]}}{{item.updatedAt[9]}}</view>
+                </view>
+              </view>
+              <view class="have_score">
+                <text class="text_score">{{item.score}}</text>
+              </view>
+            </view>
+            <view style="margin-bottom;padding:0rpx;border-bottom:5pX solid rgb(190, 195, 195);margin-top: 10rpx"></view>
+            <view class="main_con">
+              <text class="detail">{{item.xiangqing}}</text>
+            </view>
+            <view style="margin-bottom;padding:0rpx;border-bottom:2pX solid rgb(190, 195, 195);margin-top: 10rpx"></view>
+            <view class="main_con">
+              <text class="detail">{{item.huifu}}</text>
+            </view>
+          </view>
+          <view class="bindchose">
+            <button type="defult" size="mini" bindtap='dail_replay' data-id="{{index}}">回复</button>
+            <button type="primary" size="mini" bindtap='dail_call_phone' data-id="{{index}}">拨打电话</button>
+            <button type="warn" size="mini" bindtap='daily_delete' data-id="{{index}}">删除</button>
+          </view>
+          <!--<view class="im"><image class="image" mode="aspectFill" src="../../img/io.png"/></view>
+           <view class='titlecave'><view class="title">{{item.leixing}}</view></view> 
+            <text class="time">{{item.adress}}</text>-->
+
+
+        </view>
+      </view>
+    </view>
+  </view>
+<!--网络反馈-->
+    <view class="tui-content" wx:if="{{ips[1].isSelect}}">
+    <view class="tui-menu-list" wx:for="{{Fankui}}">
+      <view class="card" bindtap='to_Daily' data-id="{{index}}">
+        <view bindtap="onItemClick">
+          <view class="decon">
+            <view class="big_title">
+              <view class="main_title">
+                <view class="title">{{item.NetObject}}</view>
+                <view class="time">{{item.stuid}}</view>
+               
+                 <view class="little_title">
+                  <view class="li_li_ti" >{{item.adress}} 
+                  {{item.updatedAt[0]}}{{item.updatedAt[1]}}{{item.updatedAt[2]}}{{item.updatedAt[3]}}{{item.updatedAt[4]}}{{item.updatedAt[5]}}{{item.updatedAt[6]}}{{item.updatedAt[7]}}{{item.updatedAt[8]}}{{item.updatedAt[9]}}  {{item.zhuangtai}}</view>
+                </view>
+              </view>
+              <view class="have_score">
+                <text class="text_score">{{item.score}}</text>
+              </view>
+            </view>
+            <view style="margin-bottom;padding:0rpx;border-bottom:5pX solid rgb(190, 195, 195);margin-top: 10rpx"></view>
+            <view class="main_con">
+              <text class="detail">{{item.detail}}</text>
+            </view>
+            <view style="margin-bottom;padding:0rpx;border-bottom:2pX solid rgb(190, 195, 195);margin-top: 10rpx"></view>
+            <view class="main_con">
+              <text class="detail">{{item.huifu}}</text>
+            </view>
+          </view>
+          <view class="bindchose">
+            <button type="defult" size="mini" bindtap='net_replay' data-id="{{index}}">回复</button>
+            <button type="primary" size="mini" bindtap='net_call_phone' data-id="{{index}}">拨打电话</button>
+            <button type="warn" size="mini" bindtap='net_delete' data-id="{{index}}">删除</button>
+          </view>
+          <!--<view class="im"><image class="image" mode="aspectFill" src="../../img/io.png"/></view>
+           <view class='titlecave'><view class="title">{{item.leixing}}</view></view> 
+            <text class="time">{{item.adress}}</text>-->
+
+
+        </view>
+      </view>
+    </view>
+  </view>
+<!--电脑报修-->
+  <view class="tui-content" wx:if="{{ips[2].isSelect}}">
+    <view class="tui-menu-list" wx:for="{{Yuyue}}">
+      <view class="card" bindtap='to_Daily' data-id="{{index}}">
+        <view bindtap="onItemClick">
+          <view class="decon">
+            <view class="big_title">
+              <view class="main_title">
+              <view class="time2">{{item.name}}  </view>
+                <view class="li_li_ti2">{{item.object}}({{item.zhuangtai}})</view>
+                
+                 <view class="little_title">
+                  <view class="li_li_ti2" >
+                  {{item.date}}  {{item.time}}</view>
+                </view>
+              </view>
+              <view class="have_score">
+                <text class="text_score">{{item.score}}</text>
+              </view>
+            </view>
+            <view style="margin-bottom;padding:0rpx;border-bottom:5pX solid rgb(190, 195, 195);margin-top: 10rpx"></view>
+            
+            <view style="margin-bottom;padding:0rpx;border-bottom:2pX solid rgb(190, 195, 195);margin-top: 10rpx"></view>
+            
+          </view>
+          <view class="bindchose">
+            <button type="defult" size="mini" bindtap='com_replay' data-id="{{index}}">状态</button>
+            <button type="primary" size="mini" bindtap='com_call_phone' data-id="{{index}}">拨打电话</button>
+            <button type="warn" size="mini" bindtap='com_delete' data-id="{{index}}">删除</button>
+          </view>
+          <!--<view class="im"><image class="image" mode="aspectFill" src="../../img/io.png"/></view>
+           <view class='titlecave'><view class="title">{{item.leixing}}</view></view> 
+            <text class="time">{{item.adress}}</text>-->
+
+
+        </view>
+      </view>
+    </view>
+  </view>
+<!--更多-->
+ <view class="tui-content" wx:if="{{ips[3].isSelect}}">正在探索着</view>
+
+</view>
+
+
+<loading hidden="{{hidden}}" bindchange="loadingChange">
+  正在加载中...
+</loading>
+
+
+<modal id="modal" hidden="{{hiddenmodalput}}" title="回复" confirm-text="提交" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
+ 
+<view>
+ <textarea id="daily_replay" class="detailText" placeholder="输入回复内容" bindinput="bindTextAreaBlur" value="{{details}}">
+  </textarea>
+
+  <scroll-view scroll-x="true" class="ip_tab_comtainer">
+  <view class="ip_tab_comtainer_padd"></view>
+  <block wx:for="{{ips_daily}}" wx:for-item="ipd" wx:key="{{ipd.id}}">
+    <view class="{{ipd.isSelect?'ip_tab_item_s':'ip_tab_item_n'}}" bindtap="daily_onIpItemClick" wx:key="{{ipd.id}}" data-item="{{ipd}}" >
+      {{ipd.title}}
+    </view>
+  </block>
+  <view class="ip_tab_comtainer_padd"></view>
+</scroll-view></view>
+</modal>
+
+<!--另一个回复-->
+<modal id="modal" hidden="{{hiddenmodalput2}}" title="回复" confirm-text="提交" cancel-text="取消" bindcancel="cancel2" bindconfirm="confirm2">
+ 
+<view>
+ <textarea id="daily_replay" class="detailText" placeholder="输入回复内容" bindinput="bindTextAreaBlur2" value="{{details}}">
+  </textarea>
+
+  <scroll-view scroll-x="true" class="ip_tab_comtainer">
+  <view class="ip_tab_comtainer_padd"></view>
+  <block wx:for="{{ips_net}}" wx:for-item="ipn" wx:key="{{ipn.id}}">
+    <view class="{{ipn.isSelect?'ip_tab_item_s':'ip_tab_item_n'}}" bindtap="net_onIpItemClick" wx:key="{{ipn.id}}" data-item="{{ipn}}" >
+      {{ipn.title}}
+    </view>
+  </block>
+  <view class="ip_tab_comtainer_padd"></view>
+</scroll-view></view>
+</modal>

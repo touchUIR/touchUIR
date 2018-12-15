@@ -1,0 +1,91 @@
+/* pages/love_comment/love_comment.wxss */
+@import '../index/index.wxss';
+page {
+ display: block;  
+  
+  background-color: #f8f8f8;  
+  margin-top:6%;
+
+}
+.news_con{
+  border-radius:17px;
+background-color:white;
+margin-top:0%;
+
+
+}
+.d-back-home {
+  position: fixed;
+  width: 96rpx;
+  height: 96rpx;
+  right: 30rpx;
+  bottom: 166rpx;
+  z-index: 10000;
+}
+.pinglunqu{
+background-color:white;
+
+}
+.si_con{
+
+}
+.all_info{
+display:flex;
+flex-direction:row;
+margin-left:2%;
+
+}
+.user_image{
+width:11%;
+margin-top:2%;
+
+align-items:center;
+justify-items:center;
+display:flex;
+
+}
+.user_info{
+width:70%;
+margin-top:2%;
+
+
+}
+.replay{
+width:15%;
+display:flex;
+justify-items:center;
+align-items:center;
+
+}
+.all_com{
+margin-left:2%;
+width:96%;
+margin-top:2%;
+
+}
+.comment{
+display:flex;
+
+}
+.us_im{
+width:60rpx;
+height:60rpx;
+border-radius:50%;
+margin-left:10%;
+
+}
+.ud_name{
+font-size:14px;
+
+}
+.ud_time{
+  font-size:13px;
+color:#9e9e9e;
+
+}
+.huih{
+
+}
+.cco{
+
+}

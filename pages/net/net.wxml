@@ -1,0 +1,102 @@
+<van-toast id="van-toast" />
+<demo-block title="基本信息">
+<van-cell-group>
+  <van-field
+    value="{{ username }}"
+    required
+    clearable
+    label="学号"
+    icon="question"
+    placeholder="请输入您的学号"
+    bind:click-icon="onClickIcon"
+    bind:change="inputStuid"
+  />
+
+  <van-field
+    value="{{ password }}"
+    label="手机号"
+    placeholder="请输入手机号"
+    required
+    border="{{ false }}"
+    bind:change="inputTelphone"
+  />
+   <van-field
+    value="{{ password }}"
+    label="使用地点"
+    placeholder="请输入使用地点"
+    required
+    border="{{ false }}"
+    bind:change="inputAdress"
+  />
+
+   
+</van-cell-group>
+</demo-block>
+<demo-block title="附加信息">
+<view class="section2" >  
+  <picker bindchange="bindPickerChange1" value="{{index1}}" range="{{objectArrayNetObject}}" mode = "selector">  
+    <view class="picker">  
+      网络类型：{{objectArrayNetObject[index1]}}  
+    </view>  
+  </picker>  
+</view>
+
+
+
+<view class="section2" >  
+  <picker bindchange="bindPickerChange2" value="{{index2}}" range="{{objectArrayQuesObject}}" mode = "selector">  
+    <view class="picker">  
+      问题类型：{{objectArrayQuesObject[index2]}}  
+    </view>  
+  </picker>  
+</view>
+</demo-block>
+
+<demo-block title="问题详情">
+  <van-cell-group>
+    <van-field
+      value="{{ message }}"
+      label="留言"
+      type="textarea"
+      placeholder="详细的说下您遇到的问题吧~"
+      rows="1"
+      autosize
+      border="{{ false }}"
+       bind:change="inputDetail"
+    />
+  </van-cell-group>
+</demo-block>
+
+ 
+
+<demo-block title="报修单">
+  <van-panel title="详细信息" status="报修中" use-footer-slot>
+    <view class="content">学号:<text style='color:red'>{{stuid}}</text>同学您好，您在<text style='color:red'>{{adress}}</text>使用<text style='color:red'>{{NetObject}}</text>时遇到了<text style='color:red'>{{QuesObject}}</text>这一问题，具体情况是：<text style='color:red'>{{detail}}</text>，点击提交将您所遇到的问题告诉我们，我们会尽快维修。</view>
+    <view slot="footer" class="footer">
+      <van-button size="small" custom-class="demo-margin-right1"  bindtap="back">取消</van-button>
+      <van-button size="small" type="danger" bindtap="upnet" >提交</van-button>
+  
+    </view>
+  </van-panel>
+</demo-block>
+
+<view class="cv">
+<form bindsubmit="formSubmit" bindreset="formReset">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</form>
+</view>

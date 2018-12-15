@@ -1,0 +1,36 @@
+<view class="reicons">
+<icon type='success' size='60' ></icon></view>
+
+<view class="title2"><text>
+恭喜您预约成功</text></view>
+<view class="cut"  style="margin-bottom;padding:5rpx;border-bottom:10pX solid #EFEFF3;"></view>
+<view class="all">
+<icon type="info" size="28"/>
+<text>\t\t以下为您的预约信息：</text></view>
+
+<view class="inf">
+<text>微信昵称：{{wxname}}</text>
+</view>
+
+<view class="inf">
+<text>姓   名：{{mname}}</text>
+</view>
+
+<view class="inf">
+<text>联系电话：{{mphone}}</text>
+</view>
+
+<view class="inf">
+<text>预约日期：{{mdate}}</text>
+</view>
+
+<view class="inf">
+<text>预约时间：{{mtime}}</text>
+</view>
+
+<view class="inf">
+<text>维修类型：{{mobject}}</text>
+</view>
+
+<view ><button class='contentview' type="primary" bindtap='backToMain'>返回主页</button>
+</view>

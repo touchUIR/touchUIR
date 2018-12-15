@@ -1,0 +1,291 @@
+<!--
+<view style="margin-bottom;border-bottom:10pX solid #9C978B;" >
+  <view class="title-tabs-bar-container">
+    <text bindtap="onTitleBarsClick0" class="title-tabs-bar-tab-text {{curSelClassifyIndex == 0 ? 'title-tabs-bar-tab-text-selected' : ''}}">综合反馈</text>
+    <text bindtap="onTitleBarsClick1" class="title-tabs-bar-tab-text {{curSelClassifyIndex == 1 ? 'title-tabs-bar-tab-text-selected' : ''}}">网络报修</text>
+  </view>
+</view>-->
+<view>
+  <view class='title_main'>
+    <view class="tc">
+      <view class='app_name'>指尖国关</view>
+    </view>
+  </view>
+  <view wx:if='{{tongzhi}}'>
+    <van-notice-bar class="noticce" mode="closeable" left-icon="/image/notice.png" text="{{tongzhi_detail}}" />
+  </view>
+  <van-dialog id="van-dialog" bind:close="onClosecon" bind:confirm="onSupport" />
+  <view>
+    <swiper class="gundong" indicator-dots="false" autoplay="false" interval="5000" duration="1000" style="height:{{bannerHeight}}px;">
+      <block wx:for="{{indeximg}}" wx:key="">
+        <swiper-item>
+          <image src="{{item}}" mode="aspectFill" class="swiper-image" bindtap='binditem' data-id="{{index}}" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+
+  <view class="big-logo">
+    <block wx:for-items="{{logos}}">
+      <view class="logoinfo" bindtap="{{item.bind}}">
+        <image style="width:100rpx; height: 100rpx;" src="{{item.image}}" mode="aspectFit" />
+        <text class="logotext">{{item.title}}</text>
+      </view>
+    </block>
+  </view>
+
+
+
+
+  <view class="tab_main" wx:if="{{!netzan}}">
+    <demo-block>
+      <van-tabs type="card" bind:click="onClickbiaoqian">
+        <van-tab wx:for="{{biaoqian}}" wx:key="index" title="{{item }}">
+          <view class="content-2" wx:if="{{biaoqianif[0]}}">
+
+            <view class="news_list" wx:for="{{act_news}}">
+
+              <!--以下为活动界面-->
+              <view class="news_con">
+                <view class="per_min">
+                  <view class="pic">
+                    <image class="userinfo-avatar" src="{{item.title_ima_link}}"></image>
+                  </view>
+                  <view class="main_name">
+                    <view class="bbiao">
+                      <text class="userinfo-nickname">{{item.name}}</text>
+                      <view class="biao">
+                        <van-tag class="demo-margin-right" mark type="primary">{{item.biaoqian}}</van-tag>
+                      </view>
+                    </view>
+                    <text class="user_time">{{item.creattime}}</text>
+                  </view>
+                  <view class="guanzhu">
+                    <van-button class="guanzhub" type="warning" round size="mini" bindtap="watch_act_detail" data-id="{{index}}">查看详情</van-button>
+                  </view>
+                </view>
+                <!--信息容器-->
+
+                <view class="fenge" style="margin-bottom;padding:0rpx;border-bottom:2pX solid #f5f5f5;margin-top: 10rpx"></view>
+                <view class="tupian">
+                  <image class="main_ima" mode="widthFix" src="{{item.imagebase64}}" data-src="{{item.imagebase64}}" bindtap='previewImage_act'></image>
+
+                </view>
+                <view class="jianjie">
+                  <text class="main_con">{{item.maincon}}</text>
+                </view>
+                <!--简介-->
+
+                <!--点赞及评论等附属功能
+             
+              <view class="dianzan" wx:if="false">
+                 <van-icon custom-class="icon" name="like " color='{{color[index]}}' size="32px" />
+              </view>-->
+                <!--image-->
+              </view>
+
+              <!--以上为活动界面-->
+            </view>
+          </view>
+
+          <view class="content-2" wx:if="{{biaoqianif[1]}}">
+            <!--以下为综合反馈界面-->
+
+            <view calss="news_list" wx:for="{{allques1}}">
+              <view class="news_con">
+                <view class="per_min">
+                  <view class="pic">
+                    <image class="userinfo-avatar" src="http://lc-0b2nocdk.cn-n1.lcfile.com/03e34dce0ea98c001037.jpg"></image>
+                  </view>
+                  <view class="main_name">
+                    <text class="userinfo-nickname">{{ item.leixing }}</text>
+                    <text class="user_time">{{item.adress}}</text>
+                  </view>
+                  <view class="guanzhu">
+                    <van-button class="guanzhub" type="warning" round size="mini" bindtap="watch_replay" data-id="{{index}}">查看回复</van-button>
+                  </view>
+                </view>
+                <!--信息容器-->
+                <view class="fenge" style="margin-bottom;padding:0rpx;border-bottom:2pX solid #f5f5f5;margin-top: 10rpx"></view>
+                <view class="tupian">
+                  <image class="main_ima"  mode="widthFix" src="{{item.imagebase64}}" data-src="{{item.imagebase64}}" bindtap='previewImage'></image>
+                </view>
+                <view class="jianjie">
+                  <text class="main_con"> {{item.xiangqing}}</text>
+                </view>
+                <!--简介-->
+
+
+                <!--image-->
+              </view>
+            </view>
+            <!--以上为综合反馈界面-->
+          </view>
+
+
+          <view class="content-2" wx:if="{{biaoqianif[2]}}">
+            <!--以下为表白墙界面-->
+
+            <view class="news_list" wx:for="{{love_wall}}">
+              <view class="news_con">
+                <view class="per_min">
+                  <view class="pic">
+                    <image class="userinfo-avatar" src="{{item.title_ima_link}}"></image>
+                  </view>
+                  <view class="main_name">
+                    <view class="bbiao">
+                      <text class="userinfo-nickname">{{ item.biaoqian }}</text>
+                      <view class="biao">
+                        <van-tag class="demo-margin-right" mark type="danger">{{item.zhaungtai}}</van-tag>
+                      </view>
+                    </view>
+                    <text class="user_time">{{item.creattime}}</text>
+                  </view>
+                  <view class="guanzhu">
+                    <!--<van-button wx:if="{{item.peidui}}" class="guanzhub" type="warning" round size="mini" bindtap="showCustomDialog" data-id="{{index}}">配对</van-button>-->
+                  </view>
+                </view>
+                <!--信息容器-->
+                <view class="fenge" style="margin-bottom;padding:0rpx;border-bottom:2pX solid #f5f5f5;margin-top: 10rpx"></view>
+
+                <view class="jianjie">
+                  <text class="main_con"> {{item.maincon}}</text>
+                </view>
+
+                <view class="tupian">
+                  <image class="main_ima"  mode="widthFix" src="{{item.imagebase64}}" data-src="{{item.imagebase64}}" bindtap='previewImage'></image>
+                </view>
+                <view class="fenge" style="margin-bottom;padding:0rpx;border-bottom:2pX solid #f5f5f5;margin-top: 10rpx"></view>
+                <!--简介-->
+                <view class='love_comment_content' wx:if='{{tongzhi}}'>
+                 <view class='love_comment_content_child' wx:if="{{item.peidui}}"  bindtap="showCustomDialog" data-id="{{index}}">配对</view><view wx:if="{{item.peidui}}" class="fenge" style="margin-bottom;padding:2rpx;border-bottom:30pX solid #f5f5f5;"></view><view class='love_comment_content_child' bindtap="bind_to_love_comment"  data-id="{{index}}">评论(测试版) {{com_length}}</view>
+                    
+                   
+                  
+                </view>
+
+
+                <!--image-->
+              </view>
+            </view>
+            <!--以上为表白墙界面-->
+          </view>
+
+
+        </van-tab>
+      </van-tabs>
+    </demo-block>
+
+
+
+
+  </view>
+  <!--text.wxml
+
+<view class="body-view" wx:if="{{netzan}}">
+  <text class='listtxt'>{{list}}</text>
+  <switch class="switch1" color="#0288d1" checked bindchange="switch1Change" />
+</view>-->
+  <view class="grid" wx:if="{{bindhidden}}" wx:if="{{netzan}}">
+    <!--top news list-->
+    <view class="card2" wx:for="{{allques}}" data-id="{{index}}" style="background:{{color1[index]}}">
+
+      <view>
+        <text class="title">{{ item.leixing }}</text>
+      </view>
+      <view>
+        <text class="tag">地址：{{item.adress}}</text>
+      </view>
+      <!--<view>
+      <text class="tag">发布于：{{item.creattime}}</text>
+    </view>-->
+
+      <view>
+        <text class="para">  {{item.xiangqing}}</text>
+      </view>
+      <view style="margin-bottom;padding:0rpx;border-bottom:2pX solid white;margin-top: 10rpx"></view>
+      <view class="huifu">
+        <view>
+          <image class="comment-icon" src="http://lc-0b2nocdk.cn-n1.lcfile.com/0e33fdb559ae9d8de02f.png" />
+        </view>
+        <text class="tlink">{{item.huifu}}</text>
+      </view>
+
+      <view class="huifu2" wx:if="{{netzan}}">
+        <view class="tool-item" catchtap='onUpTop' data-post-id="{{post.postId}}" data-id="{{index}}">
+          <image class='suimage' wx:if="{{ifsupport[index]}}" src="/image/likered.png" id="{{index}}"></image>
+          <image class='suimage' wx:else src="/image/like.png" id="{{index}}"></image>
+          <text>{{item.supports}}</text>
+        </view>
+        <view class="tool-item2" catchtap='onnptop' data-post-id="{{post.postId}}" data-id="{{index}}">
+          <image class='suimage' wx:if="{{ifdissupport[index]}}" src="/image/dislikeed.png" id="{{index}}"></image>
+          <image class='suimage' wx:else src="/image/dislike.png" id="{{index}}"></image>
+          <text>{{item.dislike}}</text>
+        </view>
+      </view>
+
+
+    </view>
+  </view>
+
+
+  <view class="grid" wx:if="{{bindhidden2}}">
+
+
+    <!--top news list-->
+    <view class="card2" wx:for="{{Fankui}}" style="background:{{color2[index]}}">
+      <view>
+        <text class="title">{{ item.NetObject }}</text>
+      </view>
+      <view>
+        <text class="tag">地址：{{item.adress}}</text>
+      </view>
+      <!-- <view>
+      <text class="tag">发布于：{{item.creattime}}{{item.createdAt[1]}}{{item.createdAt[2]}}{{item.createdAt[3]}}{{item.createdAt[4]}}{{item.createdAt[5]}}{{item.createdAt[6]}}{{item.createdAt[7]}}{{item.createdAt[8]}}{{item.createdAt[9]}}</text>
+    </view>-->
+      <view>
+        <text class="para">  {{item.detail}}</text>
+      </view>
+      <view style="margin-bottom;padding:0rpx;border-bottom:2pX solid white;margin-top: 10rpx"></view>
+      <view class="huifu">
+        <view>
+          <image class="comment-icon" src="http://lc-0b2nocdk.cn-n1.lcfile.com/0e33fdb559ae9d8de02f.png" />
+        </view>
+        <text class="tlink">{{item.huifu}}</text>
+      </view>
+
+      <view class="huifu2" wx:if="{{netzan}}">
+        <view class="tool-item" catchtap='UpTop' data-post-id="{{post.postId}}" data-id="{{index}}">
+          <image class='suimage' wx:if="{{support[index]}}" src="/image/likered.png" id="{{index}}"></image>
+          <image class='suimage' wx:else src="/image/like.png" id="{{index}}"></image>
+          <text>{{item.sup}}</text>
+        </view>
+        <view class="tool-item2" catchtap='nptop' data-post-id="{{post.postId}}" data-id="{{index}}">
+          <image class='suimage' wx:if="{{dissupport[index]}}" src="/image/dislikeed.png" id="{{index}}"></image>
+          <image class='suimage' wx:else src="/image/dislike.png" id="{{index}}"></image>
+          <text>{{item.diske}}</text>
+        </view>
+      </view>
+
+
+    </view>
+  </view>
+</view>
+
+<!--配对-->
+
+<van-dialog use-slot title="配对问答" show="{{ loveshow }}" show-cancel-button bind:close="onCloselove" bind:confirm="peiduilove">
+  <view class='peidui_ques'>
+    <view class='padding222'>
+      <text>{{dq_ques}} </text>
+    </view>
+  </view>
+  <van-field value="{{ dq_ans }}" bind:change="onInques" label="答案" :border="false" placeholder="输入你的答案吧" />
+</van-dialog>
+<!--<view >
+<van-tabbar active="{{ active }}"   bind:change="onChange">
+  <van-tabbar-item icon="wap-home">主页</van-tabbar-item>
+  <van-tabbar-item icon="records" wx:if='{{!netzan}}'>兴趣部落</van-tabbar-item>
+  <van-tabbar-item icon="contact" >个人管理</van-tabbar-item>
+</van-tabbar></view>-->

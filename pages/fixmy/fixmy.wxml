@@ -1,0 +1,64 @@
+<demo-block title="总有你需要的~">
+  <van-tabs bind:click="onClick" type="card">
+    <van-tab wx:for="{{biaoqian}}" wx:key="index" title="{{ item }}">
+      <van-notice-bar mode="closeable" text="点击卡片可查看详细图文教程，点击右侧关闭按钮可以关闭滚动通知栏。" />
+
+      <view class="order-item" wx:for="{{list}}" wx:if="{{biaoqianif[0]}}">
+        <view class="flex-wrp" style="flex-direction:row;" data-id="{{index}}" bindtap='detail'>
+          <view class="card">
+            <view class='miaoshu'>
+              <view class="com_title">{{item.title}}
+                <van-tag class="demo-margin-right" plain type="danger">{{item.biaoqian}}</van-tag>
+              </view>
+              <view class="com_main">{{item.reason}}</view>
+            </view>
+            <view class='tupian'>
+              <image class="main_ima" src="{{item.titleimage}}" data-src="{{item.titleimage}}"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <view class="order-item" wx:if="{{biaoqianif[1]}}">
+        <text>即将上线</text>
+        <!--<view class="flex-wrp" style="flex-direction:row;" data-id="{{index}}" bindtap='detail'>
+          <view class="card">
+            <view class="com_title">{{item.title}}
+              <van-tag class="demo-margin-right" plain type="danger">{{item.biaoqian}}</van-tag>
+            </view>
+
+            <view class="com_main">{{item.reason}}</view>
+
+          </view>
+        </view>-->
+      </view>
+      <view class="order-item" wx:if="{{biaoqianif[2]}}" wx:for="{{re_list}}">
+
+        <!--以下为资源-->
+        <view class="flex-wrp" wx:if="{{reOnOff}}" style="flex-direction:row;" data-id="{{index}}" bindtap='link_detail'>
+          <view class="card">
+            <view class='miaoshu'>
+              <view class="com_title">{{item.title}}
+                <van-tag class="demo-margin-right" plain type="danger">{{item.down_num}}</van-tag>
+              </view>
+
+              <view style='font-size: 10px;color: gray;margin-left: 4%;'>{{item.upload_user_name}} 于 {{item.creattime}} 上传</view>
+              <view style='font-size: 10px;color: gray;margin-left: 4%;'></view>
+
+              <view class="com_main" style='margin-left:4%;'>院系：{{item.college}}</view>
+              <view class="com_main" style='margin-left:4%;'>课程：{{item.class_name}}</view>
+              <!-- <view class='donwloadInfo'><view style='width:50%;display:flex;justify-content:center'><van-button type="primary" plain size="small">查看详情</van-button></view><view style='width:50%;display:flex;justify-content:center'>
+<van-button type="warning" plain size="small">复制链接</van-button></view></view>-->
+            </view>
+            <view class='tupian'>
+              <image class="main_ima" src="{{item.image}}" data-src="{{item.image}}"></image>
+            </view>
+          </view>
+        </view>
+
+        <!--以上为资源-->
+      </view>
+    </van-tab>
+  </van-tabs>
+</demo-block>
+<van-dialog id="van-dialog" />

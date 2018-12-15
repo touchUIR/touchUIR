@@ -1,0 +1,103 @@
+<!--<view class='pa'>
+  <view class="grid">
+    <!--top news list-->
+<!--<view  class="card" wx:for="{{relist}}" data-id="{{index}}">
+      <view>
+        <text class="title">{{ item.title }}</text>
+      </view>
+
+      <view wx:for="{{relist[index].tr}}">
+        <view style="margin-bottom;padding:0rpx;border-bottom:2pX solid #e0e0e0;margin-top: 10rpx"></view>
+        <view>
+          <text class="tag">比赛时间：{{item.time[6]}}{{item.time[7]}}{{item.time[8]}}{{item.time[9]}}{{item.time[10]}}</text>
+        </view>
+        <view class="content">
+          <view class="covs">
+            <text class="tag1">{{item.player1}}</text>
+            <text class="dovs">{{item.score}}</text>
+            <text class="tag2">{{item.player2}}</text>
+          </view>
+        </view>
+
+        <!-- <view>
+      <text class="tag3">{{item.score}}</text>
+    </view>-->
+<!-- </view>-->
+<!--<view>
+      <text class="tag">发布于：{{item.createdAt[0]}}{{item.createdAt[1]}}{{item.createdAt[2]}}{{item.createdAt[3]}}{{item.createdAt[4]}}{{item.createdAt[5]}}{{item.createdAt[6]}}{{item.createdAt[7]}}{{item.createdAt[8]}}{{item.createdAt[9]}}</text>
+    </view>
+    <view>
+      <text class="para">  {{item.detail}}</text>
+    </view>
+    <view style="margin-bottom;padding:0rpx;border-bottom:2pX solid #e0e0e0;margin-top: 10rpx"></view>
+    <view class="huifu">
+      <view>
+        <image class="comment-icon" src="http://lc-0b2nocdk.cn-n1.lcfile.com/0e33fdb559ae9d8de02f.png" />
+      </view>
+      <text class="tlink">{{item.huifu}}</text>
+    </view>
+  </view>-->
+<!-- </view>
+  </view>
+</view>-->
+<view class="body-view" >
+<text class='listtxt1'>比赛信息</text>
+</view>
+
+<view class='pa'>
+  <view class="grid">
+    <scroll-view scroll-x>
+      <view class='hor'>
+        <view class="card" wx:for="{{relist}}" data-id="{{index}}">
+          <view>
+            <text class="title">{{ item.title }}</text>
+          </view>
+
+          <view wx:for="{{relist[index].tr}}">
+            <view style="margin-bottom;padding:0rpx;border-bottom:2pX solid #e0e0e0;margin-top: 10rpx"></view>
+            <view>
+              <text class="tag">比赛时间：{{item.time[6]}}{{item.time[7]}}{{item.time[8]}}{{item.time[9]}}{{item.time[10]}}</text>
+            </view>
+            <view class="content">
+              <view class="covs">
+                <text class="tag1">{{item.player1}}</text>
+                <text class="dovs">{{item.score}}</text>
+                <text class="tag2">{{item.player2}}</text>
+              </view>
+            </view>
+
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+
+  </view>
+</view>
+
+<view class="body-view" >
+<text class='listtxt2'>NBA热文</text>
+</view>
+
+<view class='pa'>
+  <view class="grid">
+
+        <view class="card2" wx:for="{{news}}" data-id="{{index}}">
+          <view>
+            <text class="title">{{ item.title }}</text>
+          </view>         
+            <view style="margin-bottom;padding:0rpx;border-bottom:2pX solid #e0e0e0;margin-top: 10rpx"></view>
+            <view>
+              <text class="tag">发布时间：{{item.publishDateStr[0]}}{{item.publishDateStr[1]}}{{item.publishDateStr[2]}}{{item.publishDateStr[3]}}{{item.publishDateStr[4]}}{{item.publishDateStr[5]}}{{item.publishDateStr[6]}}{{item.publishDateStr[7]}}{{item.publishDateStr[8]}}{{item.publishDateStr[9]}}</text>
+            </view>
+            <view>
+              <text class="tag">作者: {{item.posterScreenName}}</text>
+            </view>
+            <view class="content">
+              <view class="covs2">
+                <text class="content2">{{item.content}}</text>              
+              </view>
+          </view>
+        </view>
+  </view>
+</view>
+

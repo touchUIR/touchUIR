@@ -1,0 +1,29 @@
+<van-nav-bar title="{{title}}" left-text="返回" left-arrow
+bind:click-left="onClickLeft">
+   
+  </van-nav-bar>
+
+<view class="image_view">
+<image class="title_image" src="{{titleimage}}"></image></view>
+<view class="cv">
+
+
+
+
+
+
+<view class="title2"><image src="../../image/ques.png" mode="aspectFill" class="blue2" />故障原因：</view>
+<view class="rongqi">
+<view class="con">{{reason}}</view></view>
+<view style="margin-bottom;padding:5rpx;border-bottom:1pX solid #bdbdbd;"></view>
+<view class="title2"><image src="../../image/net.png" mode="aspectFill" class="blue2" />解决方法：</view>
+<view class="rongqi">
+<view class="con">{{way}}</view></view>
+<view style="margin-bottom;padding:5rpx;border-bottom:1pX solid #bdbdbd;"></view>
+
+
+
+</view>
+<!-- 回到首页(分享的时候显示) -->
+<image wx:if="{{isshare}}" bindtap='backHome' class='d-back-home' src='http://lc-0b2nocdk.cn-n1.lcfile.com/729dbb3f69c259313773.png' lazy-load></image>
+

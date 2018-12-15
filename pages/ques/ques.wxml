@@ -1,0 +1,13 @@
+<text class="text">建议反馈</text>
+
+<view style="margin-bottom;padding:5rpx;border-bottom:5pX solid #EFEFF3;"></view>
+
+<view class="namePut">
+    <textarea placeholder="吐槽点什么？" name="textarea" bindinput="inputAdvice"/>   
+</view>
+<view class="namePut2">
+  <input placeholder="联系方式（QQ/微信/邮箱/手机）" focus="{{focus}}" bindinput="inputTel"/>
+</view>
+
+
+<button bindtap="upAdvice"> 提交 </button>

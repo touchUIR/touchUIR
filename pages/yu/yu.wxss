@@ -1,0 +1,99 @@
+.little_title{
+  
+  margin-left: 18px;
+  margin-bottom: 5px;
+  color:rgba(69,90,100,.6);
+  font-size: 14px
+}
+.titl{
+  height: 35px;
+  margin-top:12px;
+
+}
+.name{
+margin-left: 10rpx;
+margin: 20rpx;
+margin-top: 0rpx;
+font-weight: bold;
+font-size: 20px
+}
+
+.section {
+  margin-left: 10rpx;
+  margin: 20rpx;
+  border: 2px solid black;
+  width:93%;
+}
+.namePut {
+  margin-left: 10rpx;
+  margin: 20rpx;
+  border: 2px solid black;
+  width:93%;
+}
+.phone{
+margin-left: 10rpx;
+margin: 20rpx;
+margin-top: 10rpx;
+font-weight: bold;
+font-size: 20px
+}
+
+
+.section2{
+   background:white;
+  
+   padding:20rpx;
+   margin-top: 2%;
+ 
+   }
+
+.maters{
+color: grey;
+margin-left: 10rpx;
+margin: 20rpx;
+padding: 20rpx;
+
+}
+.zhu{
+  margin: 30rpx;
+  font-weight: bold;
+  margin-top: 3%
+}
+.ok{
+  
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.picker{
+  /*font-weight: bold;*/
+  font-size:16px;
+text-align:center;
+
+}
+.cv{
+    
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    
+    background-color: #f8f8f8;
+}
+page {  
+  display: block;  
+  min-height: 95%;  
+  background-color: #f8f8f8; margin-top: 10% 
+  
+}  
+.content {
+  padding: 20px;
+  font-size: 16px;
+}
+
+.footer {
+  text-align: right;
+}
+.demo-margin-right1{
+  margin-right:10px;
+
+}

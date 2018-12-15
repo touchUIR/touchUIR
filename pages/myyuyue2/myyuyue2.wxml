@@ -1,0 +1,54 @@
+
+<!--订单头-->
+<view class="detailtop">
+  <view class="detailtoppic">
+    <image src="{{image}}"></image>
+  </view>
+  <view class="detailtoptit">{{name}}
+  </view>
+  <view class="detailtopstat">{{zhuangtai}}
+  </view>
+
+</view>
+
+ <!--选择-->
+<view class="section2" >  
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{Quesdata}}" mode = "selector" bindtap="bind">  
+    <view class="picker">  
+      预约时间：{{Quesdata[length-1]}}  
+    </view>  
+  </picker>  
+</view>
+
+ 
+<!--内容-->
+<view class="detailinfo">
+  <view class="detailtit">
+   维修详情
+  </view>
+  <view class="detailtxt">
+    <view class="detailtit0"><text style='font-weight:bold'>姓名：</text>{{realname}}</view>
+    <view class="detailtit0"><text style='font-weight:bold'>联系方式：</text>{{phone}}</view>
+    <view class="detailtit0"><text style='font-weight:bold'>预约日期：</text>{{data}}</view>
+    <view class="detailtit0"><text style='font-weight:bold'>预约时间：</text>{{time}}</view>
+    <view class="detailtit0"><text style='font-weight:bold'>维修类型：</text>{{fixObject}}</view>
+  </view>
+  
+
+</view>
+
+
+<!--评分-->
+<view class="detaillist" hidden="{{startf}}">
+  <view class="tabletota2">评分</view>
+  <view class="tabletotal">
+  <view class="zan-font-16 my-ib" bindtap="myStarChoose">
+    <block wx:for="{{starMap}}">
+      <text wx:if="{{star>=index+1}}" style="padding-right: .5em" class="zan-c-red" data-star="{{index+1}}" >★</text>
+      <text wx:if="{{star<index+1}}" style="padding-right: .5em" class="zan-c-gray-dark" data-star="{{index+1}}">☆</text>
+    </block>
+  </view>
+  <!--★-->
+  <text class="zan-c-gray-dark">{{starMap[star-1]}}</text>
+</view>
+  </view>

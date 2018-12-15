@@ -1,0 +1,141 @@
+<view bindtap="orderManage3" class="tableviewcell">
+  <image src="../../image/list.png" />
+  <text>问题反馈：生活部(点击{{look3}}）</text>
+</view>
+
+<view wx:if="{{bindhidden3}}" class="order-item" wx:for="{{allques}}">
+  <view class="flex-wrp" style="flex-direction:row;">
+    <view class="no">{{index+1}}</view>
+    <view class="inf">
+      <view class="order-footer">
+        <text>类型：{{item.leixing}}</text>
+        <text>电话：{{item.phone}}</text>
+      </view>
+
+      <view class="order-footer">
+        <text>地址：{{item.adress}}</text>
+        <text>详情：（点击右侧详情图标查看）</text>
+      </view>
+
+      <view class="order-footer">
+        <text>反馈时间：{{item.updatedAt}}</text>
+      </view>
+
+      <view class="order-footer1">
+        <text>当前处理状态：{{item.zhuangtai}}</text>
+        <text>评分：{{item.score}}</text>
+      </view>
+
+      <view class="order-footer">
+        <text>回复：{{item.huifu}}</text>
+      </view>
+
+      
+
+    </view>
+
+    <view class="con">
+      <view class="edi" data-id="{{index}}" bindtap='detail2'>
+        <image src="../../image/aboutus.png" style="width: 50px; height: 50px;" />
+      </view>
+      <view class="edi2" data-id="{{index}}" bindtap='detail3'>
+        <image src="../../image/net.png" style="width: 50px; height: 50px;" />
+      </view>
+    </view>
+  </view>
+  
+   <view class="track-input-block">
+      
+      <input class="track-input" placeholder="请输入回复内容" bindconfirm="track"  data-id="{{index}}" bindinput="life" />
+      
+      <image src="../../image/arrow.png" mode="widthFix" class="i-scan" bindtap="scanReplay" data-id="{{index}}"></image>
+    </view>
+
+</view>
+
+
+
+
+
+<view bindtap="orderManage" class="tableviewcell">
+  <image src="../../image/list.png" />
+  <text>本月预约：电脑维修(点击{{look}}）</text>
+</view>
+
+<view wx:if="{{bindhidden}}" class="order-item2" wx:for="{{Yuyue}}">
+  <view class="flex-wrp2" style="flex-direction:row;">
+    <view class="no">{{index+1}}</view>
+    <view class="inf">
+      <view class="order-footer">
+        <text>姓名：{{item.name}}</text>
+        <text>电话：{{item.phone}}</text>
+      </view>
+
+      <view class="order-footer">
+        <text>预约日期：{{item.date}}</text>
+        <text>时间：{{item.time}}</text>
+      </view>
+
+      <view class="order-footer">
+        <text>维修类型：{{item.object}}</text>
+        <text>维修状态：{{item.zhuangtai}}</text>
+      </view>
+      <view class="order-footer">
+        <text>上传时间：{{item.createdAt}}</text>
+      </view>
+    </view>
+    <view class="edi" data-id="{{index}}" bindtap='edit'>
+      <image src="../../image/net.png" style="width: 50px; height: 50px;" />
+    </view>
+  </view>
+</view>
+
+
+
+
+<view bindtap="orderManage2" class="tableviewcell">
+  <image src="../../image/list.png" />
+  <text>网络反馈：网络报修(点击{{look2}}）</text>
+</view>
+
+<view wx:if="{{bindhidden2}}" class="order-item3" wx:for="{{Fankui}}">
+  <view class="flex-wrp3" style="flex-direction:row;">
+    <view class="no">{{index+1}}</view>
+    <view class="inf">
+      <view class="order-footer">
+        <text>学号：{{item.stuid}}</text>
+        <text>电话：{{item.telphone}}</text>
+      </view>
+
+      <view class="order-footer">
+        <text>地址：{{item.adress}}</text>
+        <text>详情：（点击右侧图表查看）</text>
+      </view>
+
+      <view class="order-footer">
+        <text>问题类型：{{item.QuesObject}}</text>
+      </view>
+      <view class="order-footer">
+        <text>上传时间：{{item.createdAt}}</text>
+      </view>
+      <view class="order-footer">
+        <text>当前处理状态：{{item.zhuangtai}}</text>
+      </view>
+    </view>
+    <view class="con">
+      <view class="edi" data-id="{{index}}" bindtap='detail'>
+        <image src="../../image/aboutus.png" style="width: 50px; height: 50px;" />
+      </view>
+      <view class="edi2" data-id="{{index}}" bindtap='detail4'>
+        <image src="../../image/net.png" style="width: 50px; height: 50px;" />
+      </view>
+    </view>
+  </view>
+   <view class="track-input-block">
+      
+      <input class="track-input" placeholder="请输入回复内容" bindconfirm="track"  data-id="{{index}}" bindinput="life2" />
+      
+      <image src="../../image/arrow.png" mode="widthFix" class="i-scan" bindtap="scanReplay2" data-id="{{index}}"></image>
+    </view>
+
+</view>

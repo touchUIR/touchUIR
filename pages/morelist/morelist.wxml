@@ -1,0 +1,48 @@
+  <van-tabs active="{{ 1 }}" bind:change="onChange">
+    <van-tab
+      wx:for="1234"
+      wx:key="index"
+      title="{{ '标签' + item }}"
+    >
+      <view class="content">
+        {{ '内容' + item }}
+      </view>
+    </van-tab>
+  </van-tabs>
+<view class="tui-content">
+  <view class="tui-menu-list" wx:for="{{list}}">
+  <view class="card" bindtap='to_Daily' data-id="{{index}}">
+        <view bindtap="onItemClick">
+            <view class="im"><image class="image" mode="aspectFill" src="../../img/io.png"/></view>
+            <!--<text class="time">{{item.date}}</text>-->
+           <view class='titlecave'><view class="title">{{item.title}}</view></view> 
+        </view>
+</view>
+  </view>
+</view>
+
+
+
+<van-tabs bind:click="onClick">
+  <van-tab wx:for="12" wx:key="index" title="{{ '标签' + item }}">
+    <view class="content">
+      {{ '内容' + item }}
+    </view>
+
+    <view class="order-item" wx:for="{{NetFix}}">
+      <view class="flex-wrp" style="flex-direction:row;" data-id="{{index}}" bindtap='detail'>
+        <view class="inf">
+          <view class="order-footer">
+            <text>{{item.title}}</text>
+          </view>
+        </view>
+      </view>
+
+
+
+    </view>
+
+
+
+  </van-tab>
+</van-tabs>

@@ -1,0 +1,84 @@
+<!--pages/love_comment/love_comment.wxml-->
+<van-nav-bar title="评论" left-text="返回" left-arrow bind:click-left="onClickLeft">
+
+</van-nav-bar>
+<view class='news_con'>
+  <view class="per_min">
+    <view class="pic">
+      <image class="userinfo-avatar" src="{{title_ima_link}}"></image>
+    </view>
+    <view class="main_name">
+      <view class="bbiao">
+        <text class="userinfo-nickname">{{ biaoqian }}</text>
+        <view class="biao">
+          <van-tag class="demo-margin-right" mark type="danger">{{zhaungtai}}</van-tag>
+        </view>
+      </view>
+      <text class="user_time">{{creattime}}</text>
+    </view>
+    <view class="guanzhu">
+      <!-- <van-button wx:if="{{peidui}}" class="guanzhub" type="warning" round size="mini" bindtap="showCustomDialog" data-id="{{index}}">配对</van-button>-->
+    </view>
+  </view>
+  <!--信息容器-->
+  <view class="fenge" style="margin-bottom;padding:0rpx;border-bottom:2pX solid #f5f5f5;margin-top: 10rpx"></view>
+
+  <view class="jianjie">
+    <text class="main_con"> {{maincon}}</text>
+  </view>
+
+  <view class="tupian">
+    <image class="main_ima" mode="widthFix" src="{{imagebase64}}" data-src="{{imagebase64}}" bindtap='previewImage'></image>
+  </view>
+  <view class="fenge" style="margin-bottom;padding:0rpx;border-bottom:2pX solid #f5f5f5;margin-top: 10rpx"></view>
+  <!--简介-->
+  <view class='love_comment_content'>
+  </view>
+</view>
+<view class="fenge" style="margin-bottom;padding:0rpx;border-bottom:2pX solid #f5f5f5;margin-top: 10rpx"></view>
+<van-cell title="评论区" />
+<!--以下为评论区-->
+<view class='pinglunqu' wx:for="{{all_comment}}" wx:key="index" >
+  <!--以下为单容器-->
+  <view class='si_con'>
+    <!--以下为信息容器，包含昵称、头像、时间、回复按钮等-->
+    <view class='all_info'>
+      <view class="user_image"><image class="us_im"  src="{{item.user_image}}"> </image></view>
+      <view class='user_info'><view class='ud_name'>{{item.user_name}}</view><view class='ud_time'>{{item.creattime}}</view></view>
+      <view class='replay'><van-button class="guanzhub" type="danger" round size="mini" bindtap="replay_com" data-id="{{index}}">回复</van-button></view>
+    </view>
+    <!--以下为评论内容-->
+    <view class="all_com">
+      <view class='comment'><view wx:if="{{item.to_uname}}" class='huih' style='color:#f44;font-size:12px'><text>回复@{{item.to_uname}}：</text></view><view class='cco' style="color:black;font-size:12px;width:75%"><text>{{item.content}}</text></view></view>
+    </view>
+  </view>
+  <view class="fenge" style="margin-bottom;padding:0rpx;border-bottom:2pX solid #f5f5f5;margin-top: 10rpx"></view>
+</view>
+
+<!---->
+<!--悬浮回复按钮-->
+<image  bindtap='mycom' class='d-back-home' src='http://lc-0b2nocdk.cn-n1.lcfile.com/81e73af034c11dba21b0.png' lazy-load></image>
+<van-dialog
+  use-slot
+  async-close
+  show="{{ show }}"
+  show-cancel-button
+ bind:close="onClosecom" 
+ bind:confirm="pinglun"
+  title="评论"
+
+>
+<van-switch-cell
+  title="匿名（暂时不可匿名）"
+  checked="{{ checked }}"
+  bind:change="onChangep"
+  label="选择匿名会随机生成昵称，每次均不一样"
+/>
+<van-field
+  value="{{ comment_con }}"
+  label="评论"
+  bind:change="onInque"
+  placeholder="请输入评论"
+/>
+
+</van-dialog>

@@ -1,0 +1,97 @@
+<van-toast id="van-toast" />
+
+<demo-block title="基本信息">
+<van-cell-group>
+  <van-field
+    value="{{ username }}"
+    required
+    clearable
+    label="用户名"
+    icon="question"
+    placeholder="请输入用户名"
+    bind:click-icon="onClickIcon"
+    bind:change="inputna"
+  />
+
+  <van-field
+    value="{{ password }}"
+    label="手机号"
+    placeholder="请输入手机号"
+    required
+    border="{{ false }}"
+    bind:change="inputph"
+  />
+</van-cell-group>
+</demo-block>
+
+
+<view class="cv">
+<demo-block title="附加信息">
+
+<form bindsubmit="formSubmit" bindreset="formReset">
+
+<van-button bindtap='chhoose_leixing'size="large">{{leixing}}</van-button>
+<van-action-sheet
+  show="{{ show }}"
+  actions="{{ actions }}"
+  cancel-text="取消"
+  bind:close="chhoose_leixing"
+  bind:cancel="chhoose_leixing"
+    bind:select="chhoose_leixing_select"
+/>
+<!--
+<view class="name">
+<text>姓名（选填）：</text>
+</view>
+
+<view class="namePut">
+  <input placeholder="请输入姓名" focus="{{focus}}" bindinput="inputna"/>
+</view>
+
+<view class="phone">
+<text>联系方式（选填）：</text>
+</view>
+
+<view class="section">
+  <input placeholder="请输入联系方式" focus="{{focus}}" bindinput="inputph"/>
+</view>-->
+
+<view class="section2">  
+  <picker mode="date" value="{{date}}" start="2017-10-01" end="2019-10-01" bindchange="bindDateChange">  
+    <view class="picker">  
+      预约日期: {{dates}}  
+    </view>  
+  </picker>  
+</view>  
+
+<view class="section2">  
+  <picker mode="time" value="{{time}}" start="20:00" end="21:00" bindchange="bindTimeChange">  
+    <view class="picker">  
+     预约时间: {{times}}
+    </view>  
+  </picker>  
+</view>  
+
+
+</form>
+</demo-block>
+
+
+
+<demo-block title="预约单">
+  <van-panel title="详细信息" status="预约中" use-footer-slot>
+    <view class="content"><text style='color:red'>{{na}}</text>您好，您选择了<text style='color:red'>{{dates}} {{times}}</text>前往网办维修电脑，地点是教学楼二楼水房（西侧），您的维修类型是<text style='color:red'>{{leixing}}</text>,点击确认将提交至我们的后台。</view>
+    <view slot="footer" class="footer">
+      <van-button size="small" custom-class="demo-margin-right1"  bindtap="back">取消</van-button>
+      <van-button size="small" type="danger" bindtap="up" >提交</van-button>
+  
+    </view>
+  </van-panel>
+</demo-block>
+
+
+
+
+</view>
+
+ 

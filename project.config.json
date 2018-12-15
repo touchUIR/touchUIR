@@ -1,0 +1,367 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"uglifyFileName": false,
+		"autoAudits": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.4.2",
+	"appid": "wx059a6a5baa25dba9",
+	"projectname": "%E7%BD%91%E7%BB%9C%E6%96%87%E5%8C%96%E5%8A%9E%E5%85%AC%E5%AE%A4",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": 54,
+			"list": [
+				{
+					"id": 0,
+					"name": "result",
+					"pathName": "pages/result/result",
+					"query": ""
+				},
+				{
+					"id": 1,
+					"name": "test",
+					"pathName": "pages/test/test",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "my",
+					"pathName": "pages/my/my",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "log",
+					"pathName": "pages/logs/logs",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "myyuyue",
+					"pathName": "pages/myyuyue/myyuyue",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "list",
+					"pathName": "pages/ques/ques",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "yu",
+					"pathName": "pages/yu/yu",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "ques",
+					"pathName": "pages/ques/ques",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "net",
+					"pathName": "pages/net/net",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "netsuc",
+					"pathName": "pages/netsucces/netsucces",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "admin",
+					"pathName": "pages/admin/admin",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "fixmy",
+					"pathName": "pages/fixmy/fixmy",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "detail",
+					"pathName": "pages/detail/detail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "allUp",
+					"pathName": "pages/allUp/allUp",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "admin",
+					"pathName": "pages/admin/admin",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "caidan",
+					"pathName": "pages/caidan/caidan",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "caidan",
+					"pathName": "pages/caidan/caidan",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "caidan",
+					"pathName": "pages/result/result",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "caidan",
+					"pathName": "pages/caidan/caidan",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "game",
+					"pathName": "pages/flappybird/flappybird",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "zhongli",
+					"pathName": "pages/zhongli/zhongli",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "admin",
+					"pathName": "pages/admin/admin",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "admin",
+					"pathName": "pages/admin/admin",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "fankui",
+					"pathName": "pages/fankuidetail/fankuidetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "ad",
+					"pathName": "pages/admin/admin",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "api",
+					"pathName": "api/apitest/apitest",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "admintest",
+					"pathName": "pages/admintest/admintest",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "admintest",
+					"pathName": "pages/admin/admin",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "admintest",
+					"pathName": "pages/admintest/admintest",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "admintest",
+					"pathName": "pages/admintest/admintest",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "admintest",
+					"pathName": "pages/admintest/admintest",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "makehaibao",
+					"pathName": "pages/haibao/makehaibao/makehaibao",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "makehaibao",
+					"pathName": "pages/haibao/makehaibao/makehaibao",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "makehaibao",
+					"pathName": "pages/haibao/makehaibao/makehaibao",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "allup",
+					"pathName": "pages/allUp/allUp",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "allup",
+					"pathName": "pages/allUp/allUp",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "a",
+					"pathName": "pages/allUp/allUp",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "ff",
+					"pathName": "pages/fixmy/fixmy",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "ffm",
+					"pathName": "pages/morelist/morelist",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "ffm",
+					"pathName": "pages/fixmy/fixmy",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "chat",
+					"pathName": "pages/chat/chat",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "chat",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "chat",
+					"pathName": "pages/chat/chat",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "chat",
+					"pathName": "pages/chat/chat",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "xxx",
+					"pathName": "pages/chat/chat",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "upn",
+					"pathName": "pages/upnews/upnews",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "upn",
+					"pathName": "pages/yu/yu",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "upn",
+					"pathName": "pages/upnews/upnews",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "upn",
+					"pathName": "pages/upnews/upnews",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "upn",
+					"pathName": "pages/fixmy/fixmy",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "d",
+					"pathName": "pages/mynet/mynet",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "d",
+					"pathName": "pages/upnews/upnews",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "love",
+					"pathName": "pages/uplove/uplove",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "l",
+					"pathName": "pages/mylove/mylove",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "pinglun",
+					"pathName": "pages/love_comment/love_comment"
+				}
+			]
+		}
+	}
+}

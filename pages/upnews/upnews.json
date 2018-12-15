@@ -1,0 +1,21 @@
+{
+
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#f8f8f8",
+    "navigationBarTitleText": "综合反馈",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": false,
+    "usingComponents": {
+      "van-field": "../../dist/field/index",
+      "van-action-sheet": "../../dist/action-sheet/index",
+      "van-button": "../../dist/button/index",
+      "van-toast": "../../dist/toast/index",
+      "demo-block": "../../components/demo-block/index",
+      "van-panel": "../../dist/panel/index",
+      "van-cell": "../../dist/cell/index",
+      "van-cell-group": "../../dist/cell-group/index",
+      "van-submit-bar": "../../dist/submit-bar/index",
+      "van-tag": "../../dist/tag/index",
+        "van-dialog": "../../dist/dialog/index"
+    }
+}

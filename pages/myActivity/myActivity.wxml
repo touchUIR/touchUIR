@@ -1,0 +1,81 @@
+
+<!--订单头-->
+<view class="detailtop">
+  <view class="detailtoppic">
+    <image src="{{image}}"></image>
+  </view>
+  <view class="detailtoptit">{{name}}
+  </view>
+<!--<view class="detailtopstate">{{zhuangtai}}</view>-->
+
+</view>
+
+<!--选择-->
+<view class="section2" >  
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{Quesdata}}" mode = "selector" bindtap="bind">  
+    <view class="picker">  
+      发布时间：{{Quesdata[0]}}  
+    </view>  
+  </picker>  
+</view>
+ 
+
+ 
+<!--内容-->
+<view class="detailinfo">
+  <view class="detailtit">
+  我的发布
+  </view>
+  <view class="detailtxt">
+  <view class="detailtit0"><text style='font-weight:bold'>发有效期：</text>{{beginday}} {{begintime}}——{{endday}} {{begintime}}</view>
+    <view class="detailtit0"><text style='font-weight:bold'>内容简介：</text>{{maincon}}</view>
+    <view class="detailtit0"><text style='font-weight:bold'>联系方式：</text>{{tel}}</view>
+    <view class="detailtit0"><text style='font-weight:bold'>内容详情：</text>{{main}}</view>
+  </view>
+  
+
+</view>
+ 
+<!--内容-->
+<view class="detailinfo"  hidden="{{!peiduionoff}}">
+  <view class="detailtit">
+   配对
+  </view>
+  <view class="detailtxt">
+    <view class="detailtit0">我的问题：{{ques}}</view>
+    <view class="detailtit0">我的答案：{{ans}}</view>
+    <view class="detailtit0">我的留言：{{liuyan}}</view>
+  </view>
+  
+
+</view>
+
+<!--回复-->
+<view class="detailinfo" hidden="true">
+  <view class="detailtit">
+   回复详情
+  </view>
+  <view class="detailtxt">
+    <view class="detailtit0">   {{replay}}</view>
+
+  </view>
+
+</view>
+
+ <!--评分-->
+<view class="detaillist" hidden="{{true}}">
+  <view class="tabletota2">评分</view>
+  <view class="tabletotal">
+  <view class="zan-font-16 my-ib" bindtap="myStarChoose">
+    <block wx:for="{{starMap}}">
+      <text wx:if="{{star>=index+1}}" style="padding-right: .5em" class="zan-c-red" data-star="{{index+1}}" >★</text>
+      <text wx:if="{{star<index+1}}" style="padding-right: .5em" class="zan-c-gray-dark" data-star="{{index+1}}">☆</text>
+    </block>
+  </view>
+  <!--★-->
+  <text class="zan-c-gray-dark">{{starMap[star-1]}}</text>
+</view>
+  </view>
+ 
+
+

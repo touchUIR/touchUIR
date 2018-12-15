@@ -1,0 +1,61 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/yu/yu",
+    "pages/test/test",
+    "pages/ques/ques",
+    "pages/my/my",
+    "pages/net/net",
+    "pages/admin/admin",
+    "pages/login/login",
+    "pages/fixmy/fixmy",
+    "pages/detail/detail",
+    "pages/allUp/allUp",
+    "pages/caidan/caidan",
+    "pages/flappybird/flappybird",
+    "pages/zhongli/zhongli",
+    "pages/fankuidetail/fankuidetail",
+    "pages/myyuyue2/myyuyue2",
+    "api/apitest/apitest",
+    "pages/admintest/admintest",
+    "pages/haibao/makehaibao/makehaibao",
+    "pages/morelist/morelist",
+    "pages/upnews/upnews",
+    "pages/mynet/mynet",
+    "pages/uplove/uplove",
+    "pages/mylove/mylove",
+    "pages/myActivity/myActivity",
+    "pages/love_comment/love_comment"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#eeeeee",
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "selectedColor": "rgb(31,122,244)",
+    "backgroundColor": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "主页",
+        "iconPath": "./image/home.png",
+        "selectedIconPath": "./image/home.png"
+      },
+      {
+        "pagePath": "pages/fixmy/fixmy",
+        "text": "贴士",
+        "iconPath": "./image/cate.png",
+        "selectedIconPath": "./image/cate.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "个人管理",
+        "iconPath": "./image/member.png",
+        "selectedIconPath": "./image/member.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+.title2{ 
+  margin-top: 0%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: bold;
+  font-size: 25px
+}
+
+.reicons{
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cut{
+  margin-top: 10%
+}
+.all{
+
+  margin-top: 10%;
+  font-size: 18px;
+  margin-left:2%;
+
+  }
+  .all text{
+    font-weight: bold;
+    font-size: 1.3rem
+  }
+
+  .inf{
+  margin-left: 20rpx;
+  margin: 30rpx;
+  
+  font-size: 18px
+  }
+.contentview{ 
+  margin-top: 10%;
+  margin-left: 10%;
+  margin-right: 10%
+}  

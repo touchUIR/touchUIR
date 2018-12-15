@@ -1,0 +1,30 @@
+.text{
+  font-size: 20px;
+  color: gray;
+  display: flex;
+  justify-content: center;
+}
+.namePut {
+  margin-left: 10rpx;
+  margin: 20rpx;
+  border: 1px solid black;
+  width:95%;
+  
+}
+.namePut2{
+  margin-left: 10rpx;
+  margin: 20rpx;
+ border: 1px solid black; 
+ 
+}
+textarea{
+  
+  margin: auto;
+  width:98%;
+  height: 5em;
+  margin-top:5px;
+  padding: 3px;
+}
+page{
+  margin-top: 15%
+}
